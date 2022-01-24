@@ -3,13 +3,13 @@ body {
   }
   
   .heading {
-    background-color: #333333;
+    background-color: white;
     margin-bottom: 20px;
     padding: 5px 0px 5px 15px;
   }
   
   .title {
-    background-color: #333333;
+    background-color: green;
     padding: 5px;
     color: white;
   }
