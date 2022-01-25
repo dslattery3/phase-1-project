@@ -2,7 +2,7 @@
 
 
 
-const url = `https://api.nasa.gov/planetary/apod?api_key=${daltonAPI}`
+const url = `https://api.nasa.gov/planetary/apod?api_key=${api}`
 fetch(url)
     .then(r => r.json())
     .then(console.log)
