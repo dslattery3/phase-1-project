@@ -1,56 +1,55 @@
 let apiDemo = 'DEMO_KEY'
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
-let tempArr = []; 
+let tempArr = [];
 const subForm = document.getElementById('submit-section')
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
-//fetch 10 photos from NASA API
-    fetch(url+`${apiKey}`+'&count=10')
-    .then(r => r.json())
-    .then(arr => 
-        {
-            tempArr = [...tempArr,...arr];
+    //fetch 10 photos from NASA API
+    fetch(url + `${apiKey}` + '&count=10')
+        .then(r => r.json())
+        .then(arr => {
+            // tempArr = [...tempArr, ...arr];
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
-    })
+})
 
-function renderPhoto(obj){
-    if (obj.media_type = 'image'){
+function renderPhoto(obj) {
+    if (obj.media_type = 'image') {
         console.log(obj)
         const newImg = document.createElement('img')
         const gallery = document.getElementById('gallery-section')
         //check for hdurl or url
         newImg.src = obj.hdurl
-        newImg.style.width ="100px"
+        newImg.style.width = "100px"
         newImg.alt = obj.title
-        newImg.addEventListener('click', e => {
+        newImg.addEventListener('click', () => {
             showPhoto(obj)
         })
         gallery.appendChild(newImg)
     }
 }
 
-function showPhoto(obj){
+function showPhoto(obj) {
     //info needed:
     //explanation, date, hdurl, title, 
     const photoDate = document.getElementById('photo-date');
     photoDate.innerText = dateFormatting(obj.date);
-    
+
     const photoExplanation = document.querySelector('p');
     photoExplanation.textContent = obj.explanation;
-    
+
     const photoHDUrl = document.querySelector('#image-section img');
     photoHDUrl.src = obj.hdurl;
     photoHDUrl.alt = obj.title;
     photoHDUrl.style.width = "500px"
 
-    const photoTitle =  document.querySelector('.title');
+    const photoTitle = document.querySelector('.title');
     photoTitle.textContent = obj.title;
 }
 
-function dateFormatting(oldDate){
+function dateFormatting(oldDate) {
     const formattedDate = oldDate.split("-");
     return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}`
 }
@@ -58,8 +57,24 @@ function dateFormatting(oldDate){
 const saveButton = document.querySelector('.save-button')
 saveButton.addEventListener('click', e => {
 
+    let passObj = {
+        title: "",
+        date: "",
+        hdurl: "",
+        explanation: ""
+    }
+
+    passObj.title = document.querySelector('.title').textContent;
+    passObj.date = document.querySelector('#photo-date').textContent;
+    passObj.hdurl = document.querySelector('#image-section img').src;
+    passObj.explanation = document.querySelector('#image-section img').alt;
+
+    console.log(passObj);
+
+    savePhoto(passObj);
+
     const savedImg = document.querySelector('#image-section img')
-    console.log(savedImg)
+    // console.log(savedImg)
     const copyImg = document.createElement('img')
     copyImg.src = savedImg.src
     copyImg.alt = savedImg.alt
@@ -69,8 +84,18 @@ saveButton.addEventListener('click', e => {
     // Need to copy photo, resize, store info
 })
 
-function savePhoto() {
+let arrSaved = [];
+
+function savePhoto(incomeObj) {
+    arrSaved.push(incomeObj);
+    let placeForSaved = document.querySelector('#liked-photos');
+
+    let imgItem = document.createElement("img");
     
+    placeForSaved.appendChild(imgItem);
+    console.log("fire!")
+    // imgItem.addEventListener('click', e => console.log(e));
+
 }
 
 //Important
