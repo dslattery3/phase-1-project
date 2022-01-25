@@ -68,6 +68,7 @@ saveButton.addEventListener('click', e => {
     const copyImg = document.createElement('img')
     copyImg.src = savedImg.src
     copyImg.alt = savedImg.alt
+    copyImg.style.width = '100px'
     const savePhotoContainer = document.querySelector('#liked-photos')
     savePhotoContainer.appendChild(copyImg)
     // Need to copy photo, resize, store info
