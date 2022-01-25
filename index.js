@@ -6,7 +6,7 @@ subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
 //fetch 10 photos from NASA API
-    fetch(url+`${apiKey}`+'&count=1' //{
+    fetch(url+`${apiKey}`+'&count=10' //{
     //     method: 'GET',
     //     headers: {
     //         'Content-Type': 'application/json'
@@ -14,8 +14,12 @@ subForm.addEventListener('submit', e => {
     // }
     )
     .then(r => r.json())
-    .then(arr => arr.forEach(renderPhoto))
-})
+    .then(arr => 
+        {
+            showPhoto(arr[0])
+            arr.forEach(renderPhoto)
+        })
+    })
 
 function renderPhoto(obj){
     if (obj.media_type = 'image'){
@@ -51,16 +55,26 @@ function showPhoto(obj){
 
     const photoTitle =  document.querySelector('.title');
     photoTitle.textContent = obj.title;
-
-
-
-
 }
-
 
 function dateFormatting(oldDate){
     const formattedDate = oldDate.split("-");
     return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}`
+}
+
+const saveButton = document.querySelector('.save-button')
+saveButton.addEventListener('click', e => {
+    console.log(saveButton)
+    console.log(e.target)
+    const savedImg = document.querySelector('#image-section img')
+    console.log(savedImg)
+    const savePhotoContainer = document.querySelector('#liked-photos')
+    savePhotoContainer.appendChild(savedImg)
+    // Need to copy photo, resize, store info
+})
+
+function savePhoto() {
+
 }
 
 //Important
