@@ -1,6 +1,4 @@
-let apiDemo = 'DEMO_KEY'
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
-let tempArr = [];
 const subForm = document.getElementById('form-submit-api')
 let saveCounter = 0;
 subForm.addEventListener('submit', e => {
@@ -10,7 +8,6 @@ subForm.addEventListener('submit', e => {
     fetch(url + `${apiKey}` + '&count=10')
         .then(r => r.json())
         .then(arr => {
-            // tempArr = [...tempArr, ...arr];
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
@@ -19,6 +16,7 @@ const dateForm = document.getElementById('form-pick-date')
 dateForm.addEventListener('submit', e => {
     e.preventDefault()
     const requestDate = document.getElementById('end-date').value
+    //fetch data for date entered
     fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=${requestDate}&end_date=${requestDate}`)
         .then(r=>r.json())
         .then(data => {
@@ -29,7 +27,6 @@ dateForm.addEventListener('submit', e => {
 //DELETE SAVED PHOTO ASPECTS
 //STYLE THIS BAD BOY
 
-
 function renderPhoto(obj) {
     if (obj.media_type = 'image') {
         console.log(obj)
@@ -37,6 +34,7 @@ function renderPhoto(obj) {
         const gallery = document.getElementById('gallery-section')
         //check for hdurl or url
         newImg.src = obj.url
+        //set width in CSS
         newImg.style.width = "100px"
         newImg.alt = obj.title
         newImg.addEventListener('click', () => {
@@ -58,6 +56,7 @@ function showPhoto(obj) {
     const photoUrl = document.querySelector('#image-section img');
     photoUrl.src = obj.url;
     photoUrl.alt = obj.title;
+    //set width and height in CSS
     photoUrl.style.width = "500px"
 
     const photoTitle = document.querySelector('.title');
@@ -65,70 +64,47 @@ function showPhoto(obj) {
 }
 
 function dateFormatting(oldDate) {
-    const formattedDate = oldDate.split("-");
-    return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}`
+    if(oldDate[2] == '/'){
+        return oldDate
+    }
+    else{
+       const formattedDate = oldDate.split("-");
+    return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}` 
+    }
+    
 }
 
 const saveButton = document.querySelector('.save-button')
 saveButton.addEventListener('click', e => {
-
     let passObj = {
         title: "",
         date: "",
         url: "",
         explanation: ""
     }
-
     passObj.title = document.querySelector('.title').textContent;
     passObj.date = document.querySelector('#photo-date').textContent;
     passObj.url = document.querySelector('#image-section img').src;
-    passObj.explanation = document.querySelector('#image-section img').alt;
-
-    // console.log(passObj);
-    console.log(passObj)
+    passObj.explanation = document.querySelector('#image-section p').innerText;
     savePhoto(passObj);
-
-    // const savedImg = document.querySelector('#image-section img')
-    // // console.log(savedImg)
-    // const copyImg = document.createElement('img')
-    // copyImg.src = savedImg.src
-    // copyImg.alt = savedImg.alt
-    // copyImg.style.width = '100px'
-    // const savePhotoContainer = document.querySelector('#liked-photos')
-    // savePhotoContainer.appendChild(copyImg)
-    // Need to copy photo, resize, store info
 })
 
 let arrSaved = [];
 
 function savePhoto(incomeObj) {
-    // if(arrSaved.length !=0){ 
-    
-    // let found = arrSaved.find(item => item.title === incomeObj.title);
-    // console.log(found);
-
-    // console.log(incomeObj)
     if (arrSaved.find( ({title}) => title === incomeObj.title)){
         return console.log('repeat')
     }
-
     arrSaved[saveCounter] = incomeObj
     let placeForSaved = document.querySelector('#liked-photos');
-
     let imgItem = document.createElement("img");
     imgItem.src = arrSaved[saveCounter].url
     imgItem.alt = arrSaved[saveCounter].title
 
-    console.log(imgItem)
-
-    // imgItem.addEventListener('click', e => {
-    //     console.log(e)
-    //     showPhoto(incomeObj)
-    // })
+    imgItem.addEventListener('click', () => {
+        showPhoto(incomeObj)
+    })
     placeForSaved.appendChild(imgItem);
-    // console.log("fire!")
-    // imgItem.addEventListener('click', e => console.log(e));
-    // }
     saveCounter++
 }
 
