@@ -5,14 +5,39 @@ const subForm = document.getElementById('submit-section')
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
-    api = apiKey
-fetch(url + `${api}`)
+//fetch 10 photos from NASA API
+    fetch(url+`${apiKey}`+'&count=50', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+        
+    })
     .then(r => r.json())
-    .then(console.log) 
-
+    .then(console.log)
 })
 
- 
+function renderPhoto(obj){
+    const newImg = document.createElement('img')
+    const imageContainer = document.getElementById('image-section')
+    newImg.src = obj.hdurl
+    newImg.alt = obj.title
+    imageContainer.appendChild(newImg)
+}
+
+
+// function difference(date1, date2) {  
+//     const date1utc = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+//     const date2utc = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+//       day = 1000*60*60*24;
+//     return(date2utc - date1utc)/day
+//   }
+  
+//   const date1 = new Date("2020-12-10"),
+//         date2 = new Date("2021-10-31"),
+//         time_difference = difference(date1,date2)
+  
+//   console.log(time_difference)
 
 
     
