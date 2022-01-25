@@ -1,6 +1,6 @@
 let apiDemo = 'DEMO_KEY'
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
-
+// let temArrObj = []; 
 const subForm = document.getElementById('submit-section')
 subForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -16,6 +16,8 @@ subForm.addEventListener('submit', e => {
     .then(r => r.json())
     .then(arr => 
         {
+            // temArrObj = [...arr];
+            // console.log(temArrObj);
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
@@ -63,6 +65,7 @@ function dateFormatting(oldDate){
 
 const saveButton = document.querySelector('.save-button')
 saveButton.addEventListener('click', e => {
+
     const savedImg = document.querySelector('#image-section img')
     console.log(savedImg)
     const copyImg = document.createElement('img')
