@@ -1,7 +1,8 @@
 let apiDemo = 'DEMO_KEY'
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
 let tempArr = [];
-const subForm = document.getElementById('submit-section')
+const subForm = document.getElementById('form-submit-api')
+let saveCounter = 0;
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
@@ -14,6 +15,19 @@ subForm.addEventListener('submit', e => {
             arr.forEach(renderPhoto)
         })
 })
+const dateForm = document.getElementById('form-pick-date')
+dateForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const requestDate = document.getElementById('end-date').value
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=${requestDate}&end_date=${requestDate}`)
+        .then(r=>r.json())
+        .then(data => {
+            renderPhoto(data[0])
+            showPhoto(data[0])
+        })
+})
+
+
 
 function renderPhoto(obj) {
     if (obj.media_type = 'image') {
@@ -91,18 +105,30 @@ function savePhoto(incomeObj) {
     
     // let found = arrSaved.find(item => item.title === incomeObj.title);
     // console.log(found);
-    arrSaved.push(incomeObj);
+
+    // console.log(incomeObj)
+    if (arrSaved.find( ({title}) => title === incomeObj.title)){
+        return console.log('repeat')
+    }
+
+    arrSaved[saveCounter] = incomeObj
     let placeForSaved = document.querySelector('#liked-photos');
 
     let imgItem = document.createElement("img");
-    imgItem.addEventListener('click', e => {
-        console.log(e)
-        showPhoto(incomeObj)
-    })
+    imgItem.src = arrSaved[saveCounter].url
+    imgItem.alt = arrSaved[saveCounter].title
+
+    console.log(imgItem)
+
+    // imgItem.addEventListener('click', e => {
+    //     console.log(e)
+    //     showPhoto(incomeObj)
+    // })
     placeForSaved.appendChild(imgItem);
     // console.log("fire!")
     // imgItem.addEventListener('click', e => console.log(e));
     // }
+    saveCounter++
 }
 
 //Important
