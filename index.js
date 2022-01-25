@@ -33,7 +33,6 @@ function renderPhoto(obj){
         newImg.addEventListener('click', e => {
             console.log(e.target)
             showPhoto(obj)
-
         })
         gallery.appendChild(newImg)
     }
@@ -64,17 +63,18 @@ function dateFormatting(oldDate){
 
 const saveButton = document.querySelector('.save-button')
 saveButton.addEventListener('click', e => {
-    console.log(saveButton)
-    console.log(e.target)
     const savedImg = document.querySelector('#image-section img')
     console.log(savedImg)
+    const copyImg = document.createElement('img')
+    copyImg.src = savedImg.src
+    copyImg.alt = savedImg.alt
     const savePhotoContainer = document.querySelector('#liked-photos')
-    savePhotoContainer.appendChild(savedImg)
+    savePhotoContainer.appendChild(copyImg)
     // Need to copy photo, resize, store info
 })
 
 function savePhoto() {
-
+    
 }
 
 //Important
