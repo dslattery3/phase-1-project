@@ -26,7 +26,8 @@ dateForm.addEventListener('submit', e => {
             showPhoto(data[0])
         })
 })
-
+//DELETE SAVED PHOTO ASPECTS
+//STYLE THIS BAD BOY
 
 
 function renderPhoto(obj) {
