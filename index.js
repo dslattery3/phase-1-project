@@ -71,7 +71,6 @@ function dateFormatting(oldDate) {
        const formattedDate = oldDate.split("-");
     return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}` 
     }
-    
 }
 
 const saveButton = document.querySelector('.save-button')
@@ -108,8 +107,6 @@ function savePhoto(incomeObj) {
     saveCounter++
 }
 
-//Important
-//Img
 
 // {date: '1995-07-08', explanation: 'July 8, 1995   Damage to Apollo 13  Picture Credit…ghted to Robert J. Nemiroff and Jerry T. Bonnell.', hdurl: 'https://apod.nasa.gov/apod/image/a13_servicemod.gif', media_type: 'image', service_version: 'v1', …}
 // date: "1995-07-08"
