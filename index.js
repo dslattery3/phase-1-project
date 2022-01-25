@@ -1,15 +1,18 @@
-// // make a db.json server with a limit amount of file
+let apiDemo = 'DEMO_KEY'
+const url = `https://api.nasa.gov/planetary/apod?api_key=`
 
-
-
-const url = `https://api.nasa.gov/planetary/apod?api_key=${api}`
-fetch(url)
+const subForm = document.getElementById('submit-section')
+subForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const apiKey = document.getElementById('apiKey').value
+    api = apiKey
+fetch(url + `${api}`)
     .then(r => r.json())
-    .then(console.log)
+    .then(console.log) 
 
+})
 
-
-
+ 
 
 
     
