@@ -93,6 +93,7 @@ let arrSaved = [];
 function savePhoto(incomeObj) {
     if (arrSaved.find( ({title}) => title === incomeObj.title)){
         alert('Photo already liked')
+        return
     }
     arrSaved[saveCounter] = incomeObj
     let placeForSaved = document.querySelector('#liked-photos');
