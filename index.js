@@ -92,14 +92,13 @@ let arrSaved = [];
 
 function savePhoto(incomeObj) {
     if (arrSaved.find( ({title}) => title === incomeObj.title)){
-        return console.log('repeat')
+        alert('Photo already liked')
     }
     arrSaved[saveCounter] = incomeObj
     let placeForSaved = document.querySelector('#liked-photos');
     let imgItem = document.createElement("img");
     imgItem.src = arrSaved[saveCounter].url
     imgItem.alt = arrSaved[saveCounter].title
-
     imgItem.addEventListener('click', () => {
         showPhoto(incomeObj)
     })
