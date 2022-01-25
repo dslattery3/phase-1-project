@@ -1,23 +1,16 @@
 let apiDemo = 'DEMO_KEY'
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
-// let temArrObj = []; 
+let tempArr = []; 
 const subForm = document.getElementById('submit-section')
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
 //fetch 10 photos from NASA API
-    fetch(url+`${apiKey}`+'&count=10' //{
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // }
-    )
+    fetch(url+`${apiKey}`+'&count=10')
     .then(r => r.json())
     .then(arr => 
         {
-            // temArrObj = [...arr];
-            // console.log(temArrObj);
+            tempArr = [...tempArr,...arr];
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
@@ -33,7 +26,6 @@ function renderPhoto(obj){
         newImg.style.width ="100px"
         newImg.alt = obj.title
         newImg.addEventListener('click', e => {
-            console.log(e.target)
             showPhoto(obj)
         })
         gallery.appendChild(newImg)
