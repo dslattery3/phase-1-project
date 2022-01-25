@@ -88,14 +88,14 @@ saveButton.addEventListener('click', e => {
     console.log(passObj)
     savePhoto(passObj);
 
-    const savedImg = document.querySelector('#image-section img')
-    // console.log(savedImg)
-    const copyImg = document.createElement('img')
-    copyImg.src = savedImg.src
-    copyImg.alt = savedImg.alt
-    copyImg.style.width = '100px'
-    const savePhotoContainer = document.querySelector('#liked-photos')
-    savePhotoContainer.appendChild(copyImg)
+    // const savedImg = document.querySelector('#image-section img')
+    // // console.log(savedImg)
+    // const copyImg = document.createElement('img')
+    // copyImg.src = savedImg.src
+    // copyImg.alt = savedImg.alt
+    // copyImg.style.width = '100px'
+    // const savePhotoContainer = document.querySelector('#liked-photos')
+    // savePhotoContainer.appendChild(copyImg)
     // Need to copy photo, resize, store info
 })
 
