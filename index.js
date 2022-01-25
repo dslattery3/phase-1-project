@@ -70,7 +70,7 @@ saveButton.addEventListener('click', e => {
     passObj.explanation = document.querySelector('#image-section img').alt;
 
     // console.log(passObj);
-
+    console.log(passObj)
     savePhoto(passObj);
 
     const savedImg = document.querySelector('#image-section img')
@@ -91,12 +91,14 @@ function savePhoto(incomeObj) {
     
     // let found = arrSaved.find(item => item.title === incomeObj.title);
     // console.log(found);
-
     arrSaved.push(incomeObj);
     let placeForSaved = document.querySelector('#liked-photos');
 
     let imgItem = document.createElement("img");
-    
+    imgItem.addEventListener('click', e => {
+        console.log(e)
+        showPhoto(incomeObj)
+    })
     placeForSaved.appendChild(imgItem);
     // console.log("fire!")
     // imgItem.addEventListener('click', e => console.log(e));
