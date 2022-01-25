@@ -21,7 +21,7 @@ function renderPhoto(obj) {
         const newImg = document.createElement('img')
         const gallery = document.getElementById('gallery-section')
         //check for hdurl or url
-        newImg.src = obj.hdurl
+        newImg.src = obj.url
         newImg.style.width = "100px"
         newImg.alt = obj.title
         newImg.addEventListener('click', () => {
@@ -33,17 +33,17 @@ function renderPhoto(obj) {
 
 function showPhoto(obj) {
     //info needed:
-    //explanation, date, hdurl, title, 
+    //explanation, date, url, title, 
     const photoDate = document.getElementById('photo-date');
     photoDate.innerText = dateFormatting(obj.date);
 
     const photoExplanation = document.querySelector('p');
     photoExplanation.textContent = obj.explanation;
 
-    const photoHDUrl = document.querySelector('#image-section img');
-    photoHDUrl.src = obj.hdurl;
-    photoHDUrl.alt = obj.title;
-    photoHDUrl.style.width = "500px"
+    const photoUrl = document.querySelector('#image-section img');
+    photoUrl.src = obj.url;
+    photoUrl.alt = obj.title;
+    photoUrl.style.width = "500px"
 
     const photoTitle = document.querySelector('.title');
     photoTitle.textContent = obj.title;
@@ -60,16 +60,16 @@ saveButton.addEventListener('click', e => {
     let passObj = {
         title: "",
         date: "",
-        hdurl: "",
+        url: "",
         explanation: ""
     }
 
     passObj.title = document.querySelector('.title').textContent;
     passObj.date = document.querySelector('#photo-date').textContent;
-    passObj.hdurl = document.querySelector('#image-section img').src;
+    passObj.url = document.querySelector('#image-section img').src;
     passObj.explanation = document.querySelector('#image-section img').alt;
 
-    console.log(passObj);
+    // console.log(passObj);
 
     savePhoto(passObj);
 
@@ -87,15 +87,20 @@ saveButton.addEventListener('click', e => {
 let arrSaved = [];
 
 function savePhoto(incomeObj) {
+    // if(arrSaved.length !=0){ 
+    
+    // let found = arrSaved.find(item => item.title === incomeObj.title);
+    // console.log(found);
+
     arrSaved.push(incomeObj);
     let placeForSaved = document.querySelector('#liked-photos');
 
     let imgItem = document.createElement("img");
     
     placeForSaved.appendChild(imgItem);
-    console.log("fire!")
+    // console.log("fire!")
     // imgItem.addEventListener('click', e => console.log(e));
-
+    // }
 }
 
 //Important
