@@ -24,6 +24,7 @@ function renderPhoto(obj){
         const gallery = document.getElementById('gallery-section')
         //check for hdurl or url
         newImg.src = obj.hdurl
+        newImg.style.width ="100px"
         newImg.alt = obj.title
         newImg.addEventListener('click', e => {
             console.log(e.target)
@@ -37,15 +38,30 @@ function renderPhoto(obj){
 function showPhoto(obj){
     //info needed:
     //explanation, date, hdurl, title, 
-    const photoDate = obj.date
-    const photoExplanation = obj.explanation
-    const photoHDUrl = obj.hdurl
-    const photoTitle = obj.title
-    const imageCard = document.getElementById('image-section')
-    console.log(obj)    
+    const photoDate = document.getElementById('photo-date');
+    photoDate.innerText = dateFormatting(obj.date);
     
+    const photoExplanation = document.querySelector('p');
+    photoExplanation.textContent = obj.explanation;
+    
+    const photoHDUrl = document.querySelector('#image-section img');
+    photoHDUrl.src = obj.hdurl;
+    photoHDUrl.alt = obj.title;
+    photoHDUrl.style.width = "500px"
+
+    const photoTitle =  document.querySelector('.title');
+    photoTitle.textContent = obj.title;
+
+
+
+
 }
 
+
+function dateFormatting(oldDate){
+    const formattedDate = oldDate.split("-");
+    return `${formattedDate[1]}/${formattedDate[2]}/${formattedDate[0]}`
+}
 
 //Important
 //Img

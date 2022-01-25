@@ -46,10 +46,6 @@ body {
     color: lightgray;
   }
   
-  img {
-    max-width: 25vw;
-  }
-  
   #film-info {
     padding-bottom: 15px;
   }
