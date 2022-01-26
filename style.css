@@ -32,7 +32,6 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
   background-color: black;
   text-align: center;
 }
@@ -43,12 +42,9 @@ h1 {
   object-fit: contain;
 }
 
-#gallery-section{
+#gallery-section,
+#liked-photos {
    margin-left: 20px
-}
-
-#liked-photos{
-   margin-right: 20px
 }
 
 .heading {
@@ -63,20 +59,26 @@ h1 {
   color: white;
 }
 
-div#gallery-section {
+div#gallery-section,  
+div#liked-photos {
   display: block;
   /* width: 25%;
   align-content: left; */
 }
 
-#gallery-section img{
-  width: 100px;
+#gallery-section img, 
+#liked-photos img {
+  width: 90px;
+  height: 90px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
-div#saved-photos {
-  display: block;
+
+/* div#saved-photos {
+  display: block; */
   /* width: 25%;
   float: right; */
-}
+/* } */
   
 
   /* #runtime {
