@@ -8,7 +8,6 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&en
     .then(data => {
         showPhoto(data[0])
         renderPhoto(data[0])
-        playSpace()
     })
 subForm.addEventListener('submit', e => {
     e.preventDefault()
