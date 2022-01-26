@@ -1,6 +1,13 @@
 const url = `https://api.nasa.gov/planetary/apod?api_key=`
 const subForm = document.getElementById('form-submit-api')
-let saveCounter = 0;
+let saveCounter = 0
+const newDay = new Date()
+const today = newDay.getFullYear()+'-'+(newDay.getMonth()+1)+'-'+newDay.getDate();
+
+fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=${today}&end_date=${today}`)
+    .then(r => r.json())
+    .then(data => showPhoto(data[0]))
+
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
@@ -24,9 +31,6 @@ dateForm.addEventListener('submit', e => {
             showPhoto(data[0])
         })
 })
-//DELETE SAVED PHOTO ASPECTS
-//STYLE THIS BAD BOY
-
 function renderPhoto(obj) {
     if (obj.media_type = 'image') {
         console.log(obj)
