@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Phase 1 Group Project</h1>
-    <div id = "submit-section">
+    <div id = "info-section">
         <ul>
             <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal API key.</li>
             <ul>
@@ -22,17 +22,23 @@
             <li>Save your photos for reference.</li>
             <li>Have fun!</li>
         </ul>
+    </div>
+    <div id ='form-area'>
+        <div></div>
         <form id= "form-submit-api">
             <label for="apiKey">API key:</label><br>
             <input type="text" id="apiKey">
             <input type="submit" value = "Submit">
-        </form><br>
+        </form>
         <form id= "form-pick-date">
             <label for="end-date">Photo of the Day (YYYY-MM-DD):</label><br>
             <input type="text" id="end-date">
             <input type="submit" value = "Submit">
         </form><br>
+        <div></div>
     </div>
+   
+
     <div class='ui centered grid'>
         <div class='four wide column'>
             <div id = "image-section">

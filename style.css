@@ -11,11 +11,16 @@ form {
   margin-right: auto;
   width: 50%
 }
-#submit-section {
+#info-section {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%
+  width: 20%
+}
+#form-area > form {
+  float: left;
+  text-align: center;
+  width: 50%;
 }
 ol {
   display: block;
@@ -36,14 +41,15 @@ h1 {
   object-fit: contain;
 }
 #image-section img {
-  width: 65%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
+  max-height: 60%;
 }
 #image-section p {
   display: block;
   text-align: center;
-  width: 65%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
