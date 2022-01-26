@@ -8,12 +8,13 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&en
     .then(data => {
         showPhoto(data[0])
         renderPhoto(data[0])
+        playSpace()
     })
 subForm.addEventListener('submit', e => {
     e.preventDefault()
     const apiKey = document.getElementById('apiKey').value
     if(apiKey == ''){
-        apiKey = 'DEMO_KEY'
+        apiKey = api
     }
     fetch(url + `${apiKey}` + '&count=10')
         .then(r => r.json())
@@ -21,6 +22,7 @@ subForm.addEventListener('submit', e => {
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
+    loading()
 })
 const dateForm = document.getElementById('form-pick-date')
 dateForm.addEventListener('submit', e => {
@@ -36,6 +38,7 @@ dateForm.addEventListener('submit', e => {
             showPhoto(data[0])
         })
         dateForm.reset()
+        playSpace()
 })
 function renderPhoto(obj) {
     if (obj.media_type = 'image') {
@@ -118,4 +121,17 @@ function savePhoto(incomeObj) {
     })
     placeForSaved.appendChild(imgItem);
     saveCounter++
+    likeIt()
+}
+const spaceSound = new Audio('./spacee.mp3')
+function playSpace() {
+    spaceSound.play()
+}
+const loadingSound = new Audio('./squid-game.mp3')
+function loading() {
+    loadingSound.play()
+}
+const loveIt = new Audio('./love-it.mp3')
+function likeIt() {
+    loveIt.play()
 }
