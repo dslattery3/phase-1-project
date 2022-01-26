@@ -1,20 +1,75 @@
 body {
-    background-color: white;
+    background-color: rgb(48, 48, 48);
+    color: white;
   }
-  
+
+a{
+  color: rgb(51, 204, 255);
+  }
+
+#submit-section{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+    /* block-color: rgb(48, 48, 48); */
+  }
+
+ol{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: black;
+    text-align: center;
+  }
+
+  #image-section {
+    display: block;
+    text-align: center;
+    object-fit: contain;
+  }
+
+  #gallery-section{
+    margin-left: 20px
+  }
+
+  #liked-photos{
+    margin-right: 20px
+  }
+
   .heading {
     background-color: white;
     margin-bottom: 20px;
     padding: 5px 0px 5px 15px;
   }
   
-  .title {
-    background-color: green;
+   .title {
+    background-color: rgb(0, 0, 0);
     padding: 5px;
     color: white;
   }
+
+div#gallery-section{
+  display: block;
+  width: 25%;
+  align-content: left;
+}
+
+div#saved-photos{
+  display: block;
+  width: 25%;
+  justify-items: right;
+}
   
-  #runtime {
+  /* #runtime {
     background-color: #333333;
     color: #3e8fde;
     padding: 0px 0px 5px 5px;
@@ -27,9 +82,9 @@ body {
   #subtitle {
     color: white;
     margin-left: 55px;
-  }
+  }  */
   
-  #showing {
+  /* #showing {
     margin-left: 20px;
   }
   
@@ -48,5 +103,5 @@ body {
   
   #film-info {
     padding-bottom: 15px;
-  }
+  } */
   
