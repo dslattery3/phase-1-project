@@ -36,6 +36,7 @@ function renderPhoto(obj) {
         newImg.src = obj.url
         //set width in CSS
         newImg.style.width = "100px"
+        newImg.style.height = "100px"
         newImg.alt = obj.title
         newImg.addEventListener('click', () => {
             showPhoto(obj)
@@ -103,6 +104,8 @@ function savePhoto(incomeObj) {
     imgItem.addEventListener('click', () => {
         showPhoto(incomeObj)
     })
+    imgItem.style.width = '100px'
+    imgItem.style.height = '100px'
     placeForSaved.appendChild(imgItem);
     saveCounter++
 }

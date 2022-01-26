@@ -1,19 +1,25 @@
 body {
-    background-color: rgb(48, 48, 48);
-    color: white;
-  }
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
 
 a{
   color: rgb(51, 204, 255);
-  }
+}
+form{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+}
 
 #submit-section{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%
-    /* block-color: rgb(48, 48, 48); */
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+  /* block-color: rgb(48, 48, 48); */
+}
 
 ol{
   display: block;
@@ -23,52 +29,56 @@ ol{
 }
 
 h1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    background-color: black;
-    text-align: center;
-  }
-
-  #image-section {
-    display: block;
-    text-align: center;
-    object-fit: contain;
-  }
-
-  #gallery-section{
-    margin-left: 20px
-  }
-
-  #liked-photos{
-    margin-right: 20px
-  }
-
-  .heading {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 5px 0px 5px 15px;
-  }
-  
-   .title {
-    background-color: rgb(0, 0, 0);
-    padding: 5px;
-    color: white;
-  }
-
-div#gallery-section{
   display: block;
-  width: 25%;
-  align-content: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color: black;
+  text-align: center;
 }
 
-div#saved-photos{
+#image-section {
   display: block;
-  width: 25%;
-  justify-items: right;
+  text-align: center;
+  object-fit: contain;
+}
+
+#gallery-section{
+   margin-left: 20px
+}
+
+#liked-photos{
+   margin-right: 20px
+}
+
+.heading {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 5px 0px 5px 15px;
 }
   
+.title {
+  background-color: rgb(0, 0, 0);
+  padding: 5px;
+  color: white;
+}
+
+div#gallery-section {
+  display: block;
+  /* width: 25%;
+  align-content: left; */
+}
+
+#gallery-section img{
+  width: 100px;
+}
+div#saved-photos {
+  display: block;
+  /* width: 25%;
+  float: right; */
+}
+  
+
   /* #runtime {
     background-color: #333333;
     color: #3e8fde;
