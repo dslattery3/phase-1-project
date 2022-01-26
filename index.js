@@ -58,7 +58,7 @@ function showPhoto(obj) {
     photoUrl.src = obj.url;
     photoUrl.alt = obj.title;
     //set width and height in CSS
-    photoUrl.style.width = "500px"
+    // photoUrl.style.width = "500px"
 
     const photoTitle = document.querySelector('.title');
     photoTitle.textContent = obj.title;
