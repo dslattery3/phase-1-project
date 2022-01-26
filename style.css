@@ -2,33 +2,27 @@ body {
   background-color: rgb(48, 48, 48);
   color: white;
 }
-
-a{
+a {
   color: rgb(51, 204, 255);
 }
-
-form{
+form {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%
 }
-
-#submit-section{
+#submit-section {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%
-  /* block-color: rgb(48, 48, 48); */
 }
-
-ol{
+ol {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-
 h1 {
   display: block;
   margin-left: auto;
@@ -36,53 +30,43 @@ h1 {
   background-color: black;
   text-align: center;
 }
-
 #image-section {
   display: block;
   text-align: center;
   object-fit: contain;
 }
-
-#image-section img{
+#image-section img {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
-
-#image-section p{
+#image-section p {
   display: block;
   text-align: center;
   width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
-
 #gallery-section,
 #liked-photos {
    font-weight: bold;
    margin-left: auto;
    margin-right: auto;
 }
-
 .heading {
   background-color: white;
   margin-bottom: 20px;
   padding: 5px 0px 5px 15px;
 }
-  
 .title {
   background-color: rgb(0, 0, 0);
   padding: 5px;
   color: white;
 }
-
 div#gallery-section,  
 div#liked-photos {
   display: block;
-  /* width: 25%;
-  align-content: left; */
 }
-
 #gallery-section img, 
 #liked-photos img {
   width: 90px;
@@ -90,47 +74,3 @@ div#liked-photos {
   padding-left: 2px;
   padding-right: 2px;
 }
-
-/* div#saved-photos {
-  display: block; */
-  /* width: 25%;
-  float: right; */
-/* } */
-  
-
-  /* #runtime {
-    background-color: #333333;
-    color: #3e8fde;
-    padding: 0px 0px 5px 5px;
-  }
-  
-  .content {
-    color: #3e8fde;
-  }
-  
-  #subtitle {
-    color: white;
-    margin-left: 55px;
-  }  */
-  
-  /* #showing {
-    margin-left: 20px;
-  }
-  
-  #films li::before {
-    content: "";
-  }
-  
-  .film {
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  .sold-out {
-    color: lightgray;
-  }
-  
-  #film-info {
-    padding-bottom: 15px;
-  } */
-  
