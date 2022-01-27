@@ -15,13 +15,13 @@ subForm.addEventListener('submit', e => {
     if(apiKey == ''){
         apiKey = api
     }
-    fetch(url + `${apiKey}` + '&count=10')
+    fetch(url + `${apiKey}` + '&count=5')
         .then(r => r.json())
         .then(arr => {
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
-    loading()
+    //loading()
 })
 const dateForm = document.getElementById('form-pick-date')
 dateForm.addEventListener('submit', e => {
