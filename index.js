@@ -6,6 +6,7 @@ const today = newDay.getFullYear()+'-'+(newDay.getMonth()+1)+'-'+newDay.getDate(
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&end_date=${today}`)
     .then(r => r.json())
     .then(data => {
+        console.log(data)
         showPhoto(data[0])
         renderPhoto(data[0])
     })
@@ -37,7 +38,7 @@ dateForm.addEventListener('submit', e => {
             showPhoto(data[0])
         })
         dateForm.reset()
-        playSpace()
+        // playSpace()
 })
 function renderPhoto(obj) {
     if (obj.media_type = 'image') {
@@ -120,17 +121,17 @@ function savePhoto(incomeObj) {
     })
     placeForSaved.appendChild(imgItem);
     saveCounter++
-    likeIt()
+    // likeIt()
 }
-const spaceSound = new Audio('./spacee.mp3')
-function playSpace() {
-    spaceSound.play()
-}
-const loadingSound = new Audio('./squid-game.mp3')
-function loading() {
-    loadingSound.play()
-}
-const loveIt = new Audio('./love-it.mp3')
-function likeIt() {
-    loveIt.play()
-}
+// const spaceSound = new Audio('./spacee.mp3')
+// function playSpace() {
+//     spaceSound.play()
+// }
+// const loadingSound = new Audio('./squid-game.mp3')
+// function loading() {
+//     loadingSound.play()
+// }
+// const loveIt = new Audio('./love-it.mp3')
+// function likeIt() {
+//     loveIt.play()
+// }
