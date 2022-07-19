@@ -8,42 +8,24 @@
     <script src="secret.js"></script>
     <script defer src='index.js'></script>
     <title>Photos From Space</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/logo192.png" />
 </head>
 <body>
+
+    <header>  
     <h1>Photos From Space</h1>
-    <div id = "info-section">
-        <ul>
-            <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal API key.</li>
-            <ul>
-                <li>Only first name, last name, and email needed.</li>
-            </ul>
-            <li>Copy and paste key into the form below.</li>
-            <li>Enter dates for photo of the day.</li>
-            <li>Save your photos for reference.</li>
-            <li>Have fun!</li>
-        </ul>
-    </div>
-    <div id ='form-area'>
-        <div></div>
-        <form id= "form-submit-api">
-            <label for="apiKey">API key:</label><br>
-            <input type="text" id="apiKey">
-            <input type="submit" value = "Submit">
-        </form>
-        <form id= "form-pick-date">
-            <label for="end-date">Photo of the Day (YYYY-MM-DD):</label><br>
-            <input type="text" id="end-date">
-            <input type="submit" value = "Submit">
-        </form><br>
-        <div></div>
-    </div>
+   
+
+</header>
    
 
     <div class='ui centered grid'>
         <div class='four wide column'>
             <div id = "image-section">
-                <h3 class='title' >Title </h3><br>
+                
                 <img alt="some-image"><br>
+                <h3 class='title' >Title </h3><br>
                 <button class="save-button">SAVE</button>
                 <span id='photo-date'>Date </span>
                 <p>
@@ -61,6 +43,35 @@
                 <ul>Saved Photos</ul>
             </div>
         </div>
+    </div>
+
+    <div id = "info-section">
+        <h3> Instructions </h3>
+        <ul>
+            <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal API key.</li>
+            <ul>
+                <li>Only first name, last name, and email needed.</li>
+            </ul>
+            <li>Copy and paste key into the form below.</li>
+            <li>Enter dates for photo of the day.</li>
+            <li>Save your photos for reference.</li>
+            <li>Have fun!</li>
+        </ul>
+    </div>
+
+    <div id ='form-area'>
+        <div></div>
+        <form id= "form-submit-api">
+            <label for="apiKey">API key:</label><br>
+            <input type="text" placeholder=' DEMO_API or yours' id="apiKey">
+            <input type="submit" value = "Get images!">
+        </form>
+        <form id= "form-pick-date">
+            <label for="end-date">Photo of the Day (YYYY-MM-DD):</label><br>
+            <input type="text" id="end-date">
+            <input type="submit" value = "Submit">
+        </form><br>
+        <div></div>
     </div>
 </body>
 </html>

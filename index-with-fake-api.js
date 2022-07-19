@@ -1,12 +1,15 @@
-//ORIGINAL WORK WHEN NASA API IS BACK UP
+// FOR DEMO PURPOSES ONLY
+// NASA API DOWN ON 27JAN2022
+// USE WITH DB.JSON SERVER
+// IF NASA API BACK UP SWITCH TO index-copy.js in index.html
 
-
-const url = `https://api.nasa.gov/planetary/apod?api_key=`
+const url = `http://localhost:3000/apods`
 const subForm = document.getElementById('form-submit-api')
 let saveCounter = 0
+let demoCounter = 30
 const newDay = new Date()
 const today = newDay.getFullYear()+'-'+(newDay.getMonth()+1)+'-'+newDay.getDate();
-fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&end_date=${today}`)
+fetch(url)
     .then(r => r.json())
     .then(data => {
         console.log(data)
@@ -15,14 +18,16 @@ fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&en
     })
 subForm.addEventListener('submit', e => {
     e.preventDefault()
-    const apiKey = document.getElementById('apiKey').value
-    if(apiKey == ''){
-        apiKey = api
-    }
-    fetch(url + `${apiKey}` + '&count=5')
+    let apiKey = document.getElementById('apiKey').value
+
+    if(apiKey.length == 0 || apiKey === 'DEMO_KEY'){
+        apiKey = 'DEMO_KEY'
+        demoCounter--
+        alert(`Invalid API Key detected, DEMO_KEY used. You have ${demoCounter} uses left.`)
+        }
+    fetch(url)
         .then(r => r.json())
         .then(arr => {
-            console.log(arr);
             showPhoto(arr[0])
             arr.forEach(renderPhoto)
         })
@@ -31,22 +36,48 @@ subForm.addEventListener('submit', e => {
 const dateForm = document.getElementById('form-pick-date')
 dateForm.addEventListener('submit', e => {
     e.preventDefault()
-    const requestDate = document.getElementById('end-date').value
-    console.log(requestDate)
-    if(apiKey == ''){
-        apiKey = api
+    let requestDate = document.getElementById('end-date').value
+    if(requestDate == ''){
+        alert('Please enter a date')
+        return
     }
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${requestDate}&end_date=${requestDate}`)
+    else if(requestDate[4] != '-'){
+        alert('Please follow the above format')
+        dateForm.reset()
+        return
+    }
+    else if(requestDate[7] != '-'){
+        alert('Please follow the above format')
+        dateForm.reset()
+        return
+    }
+    else if(requestDate.length != 10){
+        alert('Please follow the above format')
+        dateForm.reset()
+        return
+    }
+    // if(apiKey == ''){
+    //     apiKey = api
+    // }
+    fetch(url)
         .then(r=>r.json())
         .then(data => {
-            renderPhoto(data[0])
-            showPhoto(data[0])
+            findDateFakeAPI(data, requestDate)
         })
         dateForm.reset()
         playSpace()
 })
+function findDateFakeAPI(arr, str){
+    for (let i=0; i < arr.length; i++){
+        if (arr[i].date === str){
+            renderPhoto(arr[i])
+            showPhoto(arr[i])
+        }
+    }
+}
+
 function renderPhoto(obj) {
-    if ( (obj.media_type = 'image') && (obj.url.search('.jpg') != - 1) ) {
+    if (obj.media_type = 'image') {
         const newImg = document.createElement('img')
         const gallery = document.getElementById('gallery-section')
         newImg.src = obj.url
