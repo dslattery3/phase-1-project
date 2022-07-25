@@ -1,3 +1,18 @@
+
+header {
+  background-color: rgb(33, 27, 27);
+}
+.navbar-brand {
+  color: white;
+  margin-left: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+
+
+
+
 body {
   background-color: rgb(48, 48, 48);
   color: white;
@@ -6,11 +21,10 @@ a {
   color: rgb(51, 204, 255);
 }
 form {
-  display: block;
-  margin-left: auto;
+  margin-left: 1.5rem;
   margin-right: auto;
-  width: 50%
 }
+
 #info-section {
   display: block;
   margin-left: auto;
@@ -30,10 +44,10 @@ ol {
 }
 h1 {
   display: block;
-  margin-left: auto;
+  margin-left: 15px;
   margin-right: auto;
   background-color: black;
-  text-align: center;
+
 }
 #image-section {
   display: block;

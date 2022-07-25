@@ -1,77 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='style.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel='stylesheet' href='style.css' />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
     <script src="secret.js"></script>
     <script defer src='index.js'></script>
     <title>Photos From Space</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="/logo192.png" />
 </head>
+
 <body>
 
-    <header>  
-    <h1>Photos From Space</h1>
-   
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-black">
+            <div class="container-fluid">
+                <h1 class="navbar-brand mb-0 h1">Photos From Space</h1>
+                <!-- </div>
+            <div class = "container">   -->
 
-</header>
-   
-
-    <div class='ui centered grid'>
-        <div class='four wide column'>
-            <div id = "image-section">
+                <!-- <form id="form-submit-api">
+                <label for="apiKey">API key:</label><br>
+                <input type="text" placeholder=' DEMO_API or your key' id="apiKey">
+                <input type="submit" value="Get Images!">
+            </form> -->
+              <div  class="d-inline-flex p-2"> 
+                <form class="d-flex" role="submit" id="form-submit-api">
+                    <input class="form-control me-2" type="text" placeholder="API key" aria-label="submit-api">
+                    <button class="btn btn-success" type="submit">images</button>
+                </form>
                 
-                <img alt="some-image"><br>
-                <h3 class='title' >Title </h3><br>
-                <button class="save-button">SAVE</button>
-                <span id='photo-date'>Date </span>
-                <p>
-                    some text here 
-                </p>
+                <form class="d-flex" role="submit" id="form-pick-date" >
+                    <input class="form-control me-2" type="text" id="end-date" placeholder="YYYY-MM-DD" aria-label="submit-api">
+                    <button class="btn btn-success" type="submit">IoTD</button>
+               </form>
+              </div> 
             </div>
-        </div>
-        <div class='four wide column'>
-            <div id = "gallery-section">
-                <ul>Gallery</ul>
-            </div>
-        </div>
-        <div class='four wide column'></div>
-            <div id = "liked-photos">
-                <ul>Saved Photos</ul>
-            </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div id = "info-section">
-        <h3> Instructions </h3>
-        <ul>
-            <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal API key.</li>
-            <ul>
-                <li>Only first name, last name, and email needed.</li>
-            </ul>
-            <li>Copy and paste key into the form below.</li>
-            <li>Enter dates for photo of the day.</li>
-            <li>Save your photos for reference.</li>
-            <li>Have fun!</li>
-        </ul>
-    </div>
+    <main>
 
-    <div id ='form-area'>
-        <div></div>
-        <form id= "form-submit-api">
-            <label for="apiKey">API key:</label><br>
-            <input type="text" placeholder=' DEMO_API or yours' id="apiKey">
-            <input type="submit" value = "Get images!">
-        </form>
-        <form id= "form-pick-date">
-            <label for="end-date">Photo of the Day (YYYY-MM-DD):</label><br>
-            <input type="text" id="end-date">
-            <input type="submit" value = "Submit">
-        </form><br>
-        <div></div>
-    </div>
+        <section>
+            <div class='ui centered grid'>
+                <div class='four wide column'>
+                    <div id="image-section">
+
+                        <img alt="some-image"><br>
+                        <h3 class='title'>Title </h3><br>
+                        <button class="save-button">SAVE</button>
+                        <span id='photo-date'>Date </span>
+                        <p>
+                            some text here
+                        </p>
+                    </div>
+                </div>
+                <div class='four wide column'>
+                    <div id="gallery-section">
+                        <ul>Gallery</ul>
+                    </div>
+                </div>
+                <div class='four wide column'></div>
+                <div id="liked-photos">
+                    <ul>Saved Photos</ul>
+                </div>
+            </div>
+            </div>
+
+            <div id="info-section">
+                <h3> Instructions </h3>
+                <ul>
+                    <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal
+                        API
+                        key.</li>
+                    <ul>
+                        <li>Only first name, last name, and email needed.</li>
+                    </ul>
+                    <li>Copy and paste key into the form below.</li>
+                    <li>Enter dates for photo of the day.</li>
+                    <li>Save your photos for reference.</li>
+                    <li>Have fun!</li>
+                </ul>
+            </div>
+        </section>
+        <aside>
+            <div class="container">
+                <form id="form-submit-api">
+                    <label for="apiKey">API key:</label><br>
+                    <input type="text" placeholder=' DEMO_API or your key' id="apiKey">
+                    <input type="submit" value="Get Images!">
+                </form>
+                <form id="form-pick-date">
+                    <label for="end-date">Photo of the Day:</label><br>
+                    <input type="text" id="end-date" placeholder="YYYY-MM-DD">
+                    <input type="submit" value="Get Images!">
+                </form><br>
+            </div>
+        </aside>
+    </main>
 </body>
+
 </html>
