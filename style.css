@@ -62,6 +62,21 @@ form {
   margin: 1rem,0,1rem;
 }
 
+.card {
+  width: 100%;
+  margin-top:0.5rem;
+  color: #41ae7b;
+}
+.second {
+  padding-top: 0rem;
+}
+.card-body {
+  padding-top: 0.1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 0.5rem;
+}
+
 /* to do media screen for 800 px width make in several 
 /* 
 .d-flex {
