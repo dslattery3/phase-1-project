@@ -39,6 +39,8 @@ dateForm.addEventListener('submit', e => {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${requestDate}&end_date=${requestDate}`)
         .then(r=>r.json())
         .then(data => {
+            console.log(api);
+            console.log(data)
             renderPhoto(data[0])
             showPhoto(data[0])
         })
@@ -66,6 +68,9 @@ function renderPhoto(obj) {
     }
 }
 function showPhoto(obj) {
+    // const backImg = document.getElementById('background-image'); 
+    // backImg.style.backgroundImage = `url(${obj.url})` ;
+
     const photoDate = document.getElementById('photo-date');
     photoDate.innerText = dateFormatting(obj.date);
 

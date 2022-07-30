@@ -23,26 +23,26 @@
     <header>
         <nav class="navbar navbar-dark navbar-expand-lg bg-black">
             <div class="container-fluid">
-                <h1 class="navbar-brand mb-0 h1">Photos From Space</h1>
-                <!-- </div>
-            <div class = "container">   -->
+                <span class="navbar-brand mb-0 h1">Photos From Space</span>
+                <div class="d-inline-flex p-2">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="#instructions" class="nav-link active " aria-current="page" id="instr-link">
+                                Instructions </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="submit" id="form-submit-api">
+                        <input class="form-control me-2" type="text" id="apiKey" placeholder="API key"
+                            aria-label="submit-api">
+                        <button class="btn btn-success" type="submit">images</button>
+                    </form>
 
-                <!-- <form id="form-submit-api">
-                <label for="apiKey">API key:</label><br>
-                <input type="text" placeholder=' DEMO_API or your key' id="apiKey">
-                <input type="submit" value="Get Images!">
-            </form> -->
-              <div  class="d-inline-flex p-2"> 
-                <form class="d-flex" role="submit" id="form-submit-api">
-                    <input class="form-control me-2" type="text" placeholder="API key" aria-label="submit-api">
-                    <button class="btn btn-success" type="submit">images</button>
-                </form>
-                
-                <form class="d-flex" role="submit" id="form-pick-date" >
-                    <input class="form-control me-2" type="text" id="end-date" placeholder="YYYY-MM-DD" aria-label="submit-api">
-                    <button class="btn btn-success" type="submit">IoTD</button>
-               </form>
-              </div> 
+                    <form class="d-flex" role="submit" id="form-pick-date">
+                        <input class="form-control me-2" type="text" id="end-date" placeholder="YYYY-MM-DD"
+                            aria-label="submit-api">
+                        <button class="btn btn-success" type="submit">PotD</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -50,33 +50,35 @@
     <main>
 
         <section>
-            <div class='ui centered grid'>
-                <div class='four wide column'>
-                    <div id="image-section">
 
-                        <img alt="some-image"><br>
-                        <h3 class='title'>Title </h3><br>
-                        <button class="save-button">SAVE</button>
-                        <span id='photo-date'>Date </span>
-                        <p>
-                            some text here
-                        </p>
-                    </div>
+            <div id="image-section" class="container-fluid">
+                <img id="image" alt="some-image" class="img-fluid w-100">
+                <br>
+                <div class="second d-flex p-2 justify-content-around align-items-center bg-black text-white">
+                    <span id='photo-date' class="text-success fw-bold fs-4 d-flex">Date </span>
+                    <h2 class='title text-success d-flex fw-bold'>Title </h3>
+                    <button class="save-button btn btn-success d-flex fw-bold">SAVE</button>
                 </div>
-                <div class='four wide column'>
-                    <div id="gallery-section">
-                        <ul>Gallery</ul>
-                    </div>
-                </div>
-                <div class='four wide column'></div>
-                <div id="liked-photos">
-                    <ul>Saved Photos</ul>
-                </div>
+                <br>
+
+
+                <p>
+                    some text here
+                </p>
             </div>
+
+
+
+            <div id="gallery-section">
+                <ul>Gallery</ul>
+            </div>
+
+            <div id="liked-photos">
+                <ul>Saved Photos</ul>
             </div>
 
             <div id="info-section">
-                <h3> Instructions </h3>
+                <h3 id="instructions"> Instructions </h3>
                 <ul>
                     <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal
                         API
@@ -91,7 +93,7 @@
                 </ul>
             </div>
         </section>
-        <aside>
+        <!-- <aside>
             <div class="container">
                 <form id="form-submit-api">
                     <label for="apiKey">API key:</label><br>
@@ -104,7 +106,7 @@
                     <input type="submit" value="Get Images!">
                 </form><br>
             </div>
-        </aside>
+        </aside> -->
     </main>
 </body>
 
