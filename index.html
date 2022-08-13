@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel='stylesheet' href='style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
@@ -55,7 +56,8 @@
                 <img id="image" alt="some-image" class="img-fluid w-100">
                 <br>
                 <div class="card bg-responsive mx-auto bg-black text-center">
-                    <div class="second card-header d-flex p-2 justify-content-around align-items-center bg-black text-white">
+                    <div
+                        class="second card-header d-flex p-2 justify-content-around align-items-center bg-black text-white">
                         <span id='photo-date' class="text-success fw-bold fs-4 d-flex">Date </span>
                         <h2 class='title text-success d-flex fw-bold'>Title </h3>
                             <button class="save-button btn btn-success d-flex fw-bold">SAVE</button>
@@ -82,20 +84,23 @@
                 <ul>Saved Photos</ul>
             </div>
 
-            <div id="info-section">
-                <h3 id="instructions"> Instructions </h3>
-                <ul>
-                    <li>Go to <a href='https://api.nasa.gov/' target='_blank'>NASA's website</a> to obtain a personal
-                        API
-                        key.</li>
-                    <ul>
-                        <li>Only first name, last name, and email needed.</li>
+            <div class="container-fluid" id = "instructions">
+                <div id ="instructions-container" class="card bg-responsive mx-auto bg-black text-center d-flex" >
+                    <h3 class="title text-success mx-auto d-flex fw-bold" > Instructions </h3>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Go to <b><a href='https://api.nasa.gov/' target='_blank'>NASA's website</a></b>
+                            to obtain a personal API key.
+                            <div class="ms-2 me-auto bg-black" >
+                                Only first name, last name, and email needed.
+                              </div>
+                        
+                        </li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Copy and paste key into the form below.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Enter dates for photo of the day.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Save your photos for reference.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> <b>Have fun!</b></li>
                     </ul>
-                    <li>Copy and paste key into the form below.</li>
-                    <li>Enter dates for photo of the day.</li>
-                    <li>Save your photos for reference.</li>
-                    <li>Have fun!</li>
-                </ul>
+                </div>
             </div>
         </section>
         <!-- <aside>

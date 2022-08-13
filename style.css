@@ -30,6 +30,11 @@ header {
   text-align: center;
 }
 
+.list-group-item {
+  font-size: 1.2rem;
+  color: #20c997;
+  text-align: left;
+}
 
 body {
   background-color: rgb(48, 48, 48);
@@ -37,7 +42,7 @@ body {
 }
 
 a {
-  color: rgb(51, 204, 255);
+  color: rgb(19, 75, 197);
 }
 
 form {
@@ -65,7 +70,7 @@ form {
 .card {
   width: 100%;
   margin-top:0.5rem;
-  color: #41ae7b;
+  color: #20c997;
 }
 .second {
   padding-top: 0rem;
@@ -77,6 +82,9 @@ form {
   padding-bottom: 0.5rem;
 }
 
+#instructions-container {
+  width: 60%;
+}
 /* to do media screen for 800 px width make in several 
 /* 
 .d-flex {
