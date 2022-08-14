@@ -122,26 +122,34 @@ function savePhoto(incomeObj) {
     // link.className = "d-block mb-4 mh-75";
     let placeForImages = document.querySelector('#liked');
     let imageContainer = document.createElement("div");
-    imageContainer.className = "col-lg-3 col-md-4 col-6";
+    imageContainer.className = "col-lg-3 col-md-4 col-6 mt-1";
     placeForImages.appendChild(imageContainer);
     // link.appendChild(imageContainer);
 
 
     imgItem.src = arrSaved[saveCounter].url
     imgItem.alt = arrSaved[saveCounter].title
-    imgItem.className = "img-fluid img-thumbnail text-bg-success border-success"
-    // imgItem.addEventListener('mouseover', e =>{
-    //     e.target.style.border = '5px'
-    //     e.target.style.width = '125px'
-    //     e.target.style.height = '125px'
-    // })
-    // imgItem.addEventListener('mouseout', e => {
-    //     e.target.style.border = '0px'
-    //     e.target.style.border ='10px'
-    //     e.target.style.height = '90px'
-    // })
+    imgItem.className = "img-fluid img-thumbnail text-bg-success border-success hover-shadow"
+    imgItem.style.transition = '0.5s'
+    imgItem.addEventListener('mouseover', e =>{
+        e.target.className="img-fluid img-thumbnail text-bg-success border-light"
+
+
+        // e.target.style.width = '125px'
+        // e.target.style.height = '125px'
+    })
+    imgItem.addEventListener('mouseout', e => {
+        e.target.className = "img-fluid img-thumbnail text-bg-success border-success"
+        // e.target.style.border ='10px'
+        // e.target.style.height = '90px'
+    })
     imgItem.addEventListener('click', () => {
-        showPhoto(incomeObj)
+        showPhoto(incomeObj);
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+           });
     })
     placeForSaved.appendChild(imgItem);
 
