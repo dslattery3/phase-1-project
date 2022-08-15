@@ -6,6 +6,9 @@ const subForm = document.getElementById('form-submit-api')
 let saveCounter = 0
 const newDay = new Date()
 const today = newDay.getFullYear()+'-'+(newDay.getMonth()+1)+'-'+newDay.getDate();
+const myModal = new bootstrap.Modal(document.getElementById('my-modal'));
+
+
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${api}&start_date=${today}&end_date=${today}`)
     .then(r => r.json())
     .then(data => {
@@ -108,9 +111,30 @@ saveButton.addEventListener('click', e => {
     savePhoto(passObj);
 })
 let arrSaved = [];
+    
+
+function closeModal(){
+    myModal.hide();
+}
+
 function savePhoto(incomeObj) {
     if (arrSaved.find( ({title}) => title === incomeObj.title)){
-        alert('Photo already liked')
+        myModal.show();
+        
+
+
+        // const modalBtnClose = document.getElementById('modal-btn-close');
+        // const modalBtnCrossClose = document.getElementById('modal-btn-cross');
+
+        // modalBtnCrossClose.addEventListener('onClick',e=>{
+        //     e.preventDefault();
+        //     myModal.hide();
+        // })
+
+        // modalBtnClose.addEventListener('onClick',e=>{
+        //     e.preventDefault();
+        //     myModal.hide();
+        // })    
         return
     }
     arrSaved[saveCounter] = incomeObj

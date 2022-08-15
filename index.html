@@ -93,6 +93,14 @@
                 </div>
             </div>
         </nav>
+
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
     </header>
 
     <main>
@@ -107,7 +115,7 @@
                         class="second card-header d-flex p-2 justify-content-around align-items-center bg-black text-white">
                         <span id='photo-date' class="text-success fw-bold fs-4 d-flex">Date </span>
                         <h2 class='title text-success d-flex fw-bold'>Title </h3>
-                            <button class="save-button btn btn-success d-flex fw-bold">SAVE</button>
+                            <button class="save-button btn btn-success d-flex fw-bold">Like</button>
                     </div>
                     <div class="card-body">
                         <p class="card-text fs-5 lh-base font-monospace text-start">
@@ -148,8 +156,10 @@
                         
                         </li>
                         <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Copy and paste key into the form below.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on button "<b>images</b>" to get some photos.</li>
                         <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Enter dates for photo of the day.</li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Save your photos for reference.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on "<b>PotD</b>" button and get Photo of that Day.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> If you liked photo it's apperars as thumbnail in gallery.</li>
                         <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> <b>Have fun!</b></li>
                     </ul>
                 </div>
@@ -170,6 +180,24 @@
             </div>
         </aside> -->
     </main>
+
+<!-- modal section -->
+    <div class="modal fade" id="my-modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content text-bg-secondary">
+            <div class="modal-header text-succes">
+              <h5 class="modal-title">Oops!</h5>
+              <button type="button" id="modal-btn-cross-close"class="btn-close" data-mdb-dismiss="modal" aria-label="Close" onClick="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+              <p >Photo already liked.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="modal-btn-close" class="btn btn-success" data-mdb-dismiss="modal" onClick="closeModal()">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>
