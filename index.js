@@ -44,8 +44,7 @@ subForm.addEventListener('submit', e => {
 const dateForm = document.getElementById('form-pick-date')
 dateForm.addEventListener('submit', e => {
     e.preventDefault()
-    const requestDate = document.getElementById('end-date').value
-    // console.log(requestDate)
+    let requestDate = document.getElementById('end-date').value
     if(apiKey == ''){
         apiKey = api
     }
@@ -59,7 +58,7 @@ dateForm.addEventListener('submit', e => {
         playSpace()
 })
 function renderPhoto(obj) {
-    if ( (obj.media_type = 'image') && (obj.url.search('.jpg') != - 1) ) {
+    if ( (obj.media_type = 'image') && ((obj.url.search('.jpg')||(obj.url.search('.gif') ))!= - 1) ) {
 
         const newHolderImage = document.createElement('div');
         newHolderImage.className = 'carousel-cell'
