@@ -88,6 +88,58 @@ h3 {
 #instructions-container {
   width: 60%;
 }
+
+#liked-photos {
+  margin-top:2rem;
+}
+
+* { box-sizing: border-box; }
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 20rem;
+  height: 20rem;
+  margin-right: 2rem;
+}
+.carousel-cell img{
+  border: 3px solid #157347;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.carousel-cell img:hover{
+  border: 3px solid #fff;
+  border-radius: 5px;
+}
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: 0px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+/* cell number */
+/* .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 0%;
+  font-size: 80px;
+  color: white;
+} */
 /* to do media screen for 800 px width make in several 
 /* 
 .d-flex {

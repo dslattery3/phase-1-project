@@ -9,9 +9,11 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel='stylesheet' href='style.css' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="secret.js"></script>
     <script defer src='index.js'></script>
     <title>Photos From Space</title>
@@ -22,53 +24,6 @@
 <body>
 
     <header>
-        <!-- <style>
-            /* Carousel styling */
-            #introCarousel,
-            .carousel-inner,
-            .carousel-item,
-            .carousel-item.active {
-              height: 100vh;
-            }
-      
-            .carousel-item:nth-child(1) {
-              background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: center center;
-            }
-      
-            .carousel-item:nth-child(2) {
-              background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: center center;
-            }
-      
-            .carousel-item:nth-child(3) {
-              background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: center center;
-            }
-      
-            /* Height for devices larger than 576px */
-            @media (min-width: 992px) {
-              #introCarousel {
-                margin-top: -58.59px;
-              }
-            }
-      
-            .navbar .nav-link {
-              color: #fff !important;
-            }
-          </style> -->
-
-
-
-
-
-
         <nav class="navbar navbar-dark navbar-expand-lg bg-black">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Photos From Space</span>
@@ -95,12 +50,6 @@
         </nav>
 
 
-        <!-- <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </a> -->
     </header>
 
     <main>
@@ -130,74 +79,77 @@
             </div>
 
 
-<!-- Gallery section -->
+            <!-- Gallery section -->
             <div id="gallery-section">
-                <ul>Gallery</ul>
+                <h3 class="title text-success mx-auto fw-bold"> Gallery</h3>
+                <ul></ul>
             </div>
 
+            <div class="main-carousel">
+                
+              </div>
+            <!-- Saved Photo section -->
+            
             <div id="liked-photos">
-                <ul>Saved Photos</ul>
-            <div class="container">
-                <div class="row text-center text-lg-start" id = "liked">
+                <h3 class="title text-success mx-auto fw-bold"> Saved Images</h3>
+                <div class="container">
+                    <div class="row text-center text-lg-start" id="liked">
+                    </div>
                 </div>
             </div>
-            </div>
-<!-- instruction section  -->
 
-            <div class="container-fluid" id = "instructions">
-                <div id ="instructions-container" class="card bg-responsive mx-auto bg-black text-center d-flex" >
-                    <h3 class="title text-success mx-auto d-flex fw-bold" > Instructions </h3>
+
+            <!-- instruction section  -->
+
+            <div class="container-fluid" id="instructions">
+                <div id="instructions-container" class="card bg-responsive mx-auto bg-black text-center d-flex">
+                    <h3 class="title text-success mx-auto d-flex fw-bold"> Instructions </h3>
                     <ul class="list-group">
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Go to <b><a href='https://api.nasa.gov/' target='_blank'>NASA's website</a></b>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Go to <b><a
+                                    href='https://api.nasa.gov/' target='_blank'>NASA's website</a></b>
                             to obtain a personal API key.
-                            <div class="ms-2 me-auto bg-black" >
+                            <div class="ms-2 me-auto bg-black">
                                 Only first name, last name, and email needed.
-                              </div>
-                        
+                            </div>
+
                         </li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Copy and paste key into the form below.</li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on button "<b>images</b>" to get some photos.</li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Enter dates for photo of the day.</li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on "<b>PotD</b>" button and get Photo of that Day.</li>
-                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> If you liked photo it's apperars as thumbnail in gallery.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Copy and paste key into the
+                            form below.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on button
+                            "<b>images</b>" to get some photos.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Enter dates for photo of
+                            the day.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> Click on "<b>PotD</b>"
+                            button and get Photo of that Day.</li>
+                        <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> If you liked photo it's
+                            apperars as thumbnail in gallery.</li>
                         <li class="list-group-item bg-black"><i class="bi-forward-fill"></i> <b>Have fun!</b></li>
                     </ul>
                 </div>
             </div>
         </section>
-        <!-- <aside>
-            <div class="container">
-                <form id="form-submit-api">
-                    <label for="apiKey">API key:</label><br>
-                    <input type="text" placeholder=' DEMO_API or your key' id="apiKey">
-                    <input type="submit" value="Get Images!">
-                </form>
-                <form id="form-pick-date">
-                    <label for="end-date">Photo of the Day:</label><br>
-                    <input type="text" id="end-date" placeholder="YYYY-MM-DD">
-                    <input type="submit" value="Get Images!">
-                </form><br>
-            </div>
-        </aside> -->
+
     </main>
 
-<!-- modal section -->
+    <!-- modal section -->
     <div class="modal fade" id="my-modal" tabindex="-1">
         <div class="modal-dialog">
-          <div class="modal-content text-bg-secondary">
-            <div class="modal-header text-succes">
-              <h5 class="modal-title">Oops!</h5>
-              <button type="button" id="modal-btn-cross-close"class="btn-close" data-mdb-dismiss="modal" aria-label="Close" onClick="closeModal()"></button>
+            <div class="modal-content text-bg-secondary">
+                <div class="modal-header text-succes">
+                    <h5 class="modal-title">Oops!</h5>
+                    <button type="button" id="modal-btn-cross-close" class="btn-close" data-mdb-dismiss="modal"
+                        aria-label="Close" onClick="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Photo already liked.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modal-btn-close" class="btn btn-success" data-mdb-dismiss="modal"
+                        onClick="closeModal()">Ok</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p >Photo already liked.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="modal-btn-close" class="btn btn-success" data-mdb-dismiss="modal" onClick="closeModal()">Ok</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 </body>
 
 </html>
